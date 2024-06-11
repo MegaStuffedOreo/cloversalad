@@ -950,7 +950,7 @@ export const crFish = [
         },
         difficulty: 2,
         attributes: [
-            { shadow: [3] },
+            { shadow: [] },
             { rods: [2,3,5] },
             { moment: [1] }
         ],
