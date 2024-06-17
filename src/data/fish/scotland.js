@@ -1246,6 +1246,10 @@ export const scotlandFish = [
             {
                 x: 9,
                 y: 59
+            },
+            {
+                x: 36,
+                y: 89
             }
         ],
         positionNote: ""
