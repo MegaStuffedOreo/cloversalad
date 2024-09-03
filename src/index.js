@@ -450,7 +450,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
                     if (accelerationMagnitude > 15) {  // Seuil de secousse
                         if (now - lastShakeTime > 1000) {  // Éviter les déclenchements multiples trop rapides
-                            console.log("REVEAL");
+                            revealed = true;
+                            [...document.querySelectorAll(".not_currentspot")].forEach(notSpot => {
+                                notSpot.style.opacity = 0.3;
+                            })
                             lastShakeTime = now;
                         }
                     }
