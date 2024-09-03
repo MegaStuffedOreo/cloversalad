@@ -386,48 +386,77 @@ document.addEventListener('DOMContentLoaded', () => {
             step.innerHTML = currentMinPoints + (fifth * (index));
         })
 
-        if(currentFish.type == "monster"){
-            console.log("IS MONSTER");
-            
-        }
 
+        if (currentFish.type == "monster") {
 
-        if (currentFish.type == "monster" && false) {
+            let revealed = false;
 
-            function setTodaySpot(date, collection, referenceDate) {
-
-                // NICE TO HAVE : AUTO SPOT DEPENDING ON THE KNOWN SPOT ROTATION PATTERN
-                
-
-                for (let i = 0; i < collection.length; i++) {
- 
-
-
-                    let dateN = new Date(date);
-                    dateN.setDate(dateN.getDate() + (i - 1));
-                    const dateText = (dateN.getMonth() + 1).toString().padStart(2, "0") + "/" + dateN.getDate().toString().padStart(2, "0")
-
-                    const timeDiff = Math.floor((dateN - referenceDate) / (1000 * 60 * 60 * 24));
-                    const index = timeDiff >= 0 ? timeDiff % collection.length : (collection.length + timeDiff) % collection.length;
-
-                    collection[index].setAttribute('data-today-spot', 'false');
-                    collection[index].removeAttribute('data-spot-day'); 
-
-                    if (dateN.getDate() == new Date(date).getDate()) {
-                        collection[index].setAttribute('data-today-spot', 'true');
-
-                    }
-                    collection[index].setAttribute('data-spot-day', dateText);
-
+            const currentSpot = getSpotForDate(currentFish.rotation, '2023-10-01');
+            const spotElements = [...document.querySelectorAll(".ccross")];
+            spotElements.forEach((spot, index) => {
+                if(index !== currentSpot-1) {
+                    spot.classList.add("not_currentspot")
                 }
-            }
+            });
 
+            (function() {
 
-            const currentDate = new Date().setDate(new Date().getDate() + 0);
-            const htmlCollection = document.getElementsByClassName('ccross');
-            const referenceDate = new Date(2023, 5, 1);
+                let mouseMovements = [];
+                const shakeThreshold = 500;
+                const shakeTimeThreshold = 500;
+                const directionChangeThreshold = 5;
+                document.addEventListener('mousemove', function(event) {
+                    if(revealed) return;
+                    const now = Date.now();
+                    mouseMovements.push({ time: now, x: event.clientX, y: event.clientY });
+                    mouseMovements = mouseMovements.filter(movement => now - movement.time < shakeTimeThreshold);
+            
+                    if (mouseMovements.length >= 5) {
+                        let directionChanges = 0;
+                        for (let i = 1; i < mouseMovements.length - 1; i++) {
+                            const prevMovement = mouseMovements[i - 1];
+                            const currentMovement = mouseMovements[i];
+                            const nextMovement = mouseMovements[i + 1];
+                            const dx1 = currentMovement.x - prevMovement.x;
+                            const dy1 = currentMovement.y - prevMovement.y;
+                            const dx2 = nextMovement.x - currentMovement.x;
+                            const dy2 = nextMovement.y - currentMovement.y;
+            
+                            if ((dx1 * dx2 < 0) || (dy1 * dy2 < 0)) {
+                                directionChanges++;
+                            }
+                        }
 
-            setTodaySpot(currentDate, htmlCollection, referenceDate);
+                        const { x: x1, y: y1 } = mouseMovements[0];
+                        const { x: x2, y: y2 } = mouseMovements[mouseMovements.length - 1];
+                        const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            
+                        if (directionChanges >= directionChangeThreshold && distance > shakeThreshold) {
+                            revealed = true;
+                            [...document.querySelectorAll(".not_currentspot")].forEach(notSpot => {
+                                notSpot.style.opacity = 0.3;
+                            })
+                            mouseMovements = [];
+                        }
+                    }
+                });
+            
+                // Détecter les secousses sur mobile
+                let lastShakeTime = 0;
+                window.addEventListener('devicemotion', function(event) {
+                    const now = Date.now();
+                    const acceleration = event.accelerationIncludingGravity;
+                    const accelerationMagnitude = Math.sqrt(acceleration.x * acceleration.x + acceleration.y * acceleration.y + acceleration.z * acceleration.z);
+            
+                    if (accelerationMagnitude > 15) {  // Seuil de secousse
+                        if (now - lastShakeTime > 1000) {  // Éviter les déclenchements multiples trop rapides
+                            console.log("REVEAL");
+                            lastShakeTime = now;
+                        }
+                    }
+                });
+            })();
+            
         }
 
         document.querySelector(".active")?.classList.remove("active");
@@ -578,6 +607,15 @@ onPageLoad(function () {
     }, 500)
 });
 
+function getSpotForDate(valuesArray, startDate) {
+    const start = new Date(startDate);
+    const current = new Date();
+    const timeDifference = current - start;
+    const daysElapsed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const index = daysElapsed % valuesArray.length;
+    return valuesArray[index];
+}
+
 
 document.body.addEventListener("click", (e) => {
     if(e.target.classList.contains("edit-button")) {
@@ -591,6 +629,8 @@ document.body.addEventListener("click", (e) => {
         }
     }
 })
+
+
 
 
 if (getQueryParamValue("c4rn")) {

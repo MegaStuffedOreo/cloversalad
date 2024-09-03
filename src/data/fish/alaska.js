@@ -1136,39 +1136,11 @@ export const alaskaFish = [
         map: "alaska",
         positions: [
             {
-                x: 45,
-                y: 85
-            },
-            {
-                x: 70,
-                y: 85
-            },
-            {
-                x: 15,
-                y: 50
-            },
-            {
                 x: 35,
                 y: 15
-            },
-            {
-                x: 50,
-                y: 70
-            },
-            {
-                x: 85,
-                y: 15
-            },
-            {
-                x: 30,
-                y: 55
-            },
-            {
-                x: 85,
-                y: 40
             }
         ],
-        positionNote: "Is basically everywhere..."
+        positionNote: "Can be found almost everywhere, but airport is the most common spot."
     },
     {
         id: "321",
@@ -1268,8 +1240,8 @@ export const alaskaFish = [
                 y: 40
             },
             {
-                x: 50,
-                y: 75
+                x: 30,
+                y: 34
             }
         ],
         positionNote: ""
@@ -1474,30 +1446,31 @@ export const alaskaFish = [
         map: "alaska",
         positions: [
             {
-                spot: "Spot\u00A01\u000ACold\u00A0Bay",
-                position: "left",
-                x: 14,
-                y: 66
-            },
-            {
-                spot: "Spot\u00A02\u000AIce\u00A0Floe",
+                spot: "Spot\u00A01\u000AIce\u00A0Floe",
                 position: "bottom",
                 x: 17,
                 y: 74
             },
             {
-                spot: "Spot\u00A03\u000AWalrus\u00A0Rock",
+                spot: "Spot\u00A02\u000AWalrus\u00A0Rock",
                 position: "top",
                 x: 17,
                 y: 88
             },
             {
-                spot: "Spot\u00A04\u000AWhale\u00A0Depths",
+                spot: "Spot\u00A03\u000AWhale\u00A0Depths",
                 position: "bottom",
                 x: 29,
                 y: 85
-            }
+            },
+            {
+                spot: "Spot\u00A04\u000ACold\u00A0Bay",
+                position: "left",
+                x: 17,
+                y: 63
+            },
         ],
+        rotation: [1, 4, 1, 1, 3, 1, 4, 2, 1, 3, 4, 3, 1, 1, 3, 4, 3, 2, 2, 4, 1, 2, 2, 1, 1, 2],
         positionNote: "The spot changes everyday. Check Discord to know the current spot."
     },
 ]

@@ -1240,6 +1240,7 @@ export const crFish = [
                 y: 45
             }
         ],
+        rotation: [2, 3, 3, 1, 3, 1, 3, 1, 2, 2, 3, 3, 4, 2, 2, 1, 1, 3, 4, 2, 2, 1, 1, 1, 1, 3],
         positionNote: "The spot changes everyday. Check Discord to know the current spot."
     },
 ]

@@ -242,8 +242,8 @@ export const glFish = [
         map: "great-lakes",
         positions: [
             {
-                x: 40,
-                y: 15
+                x: 62,
+                y: 90
             },
             {
                 x: 35,
@@ -254,8 +254,8 @@ export const glFish = [
                 y: 80
             },
             {
-                x: 75,
-                y: 50
+                x: 90,
+                y: 29
             }
         ],
         positionNote: ""
@@ -1318,6 +1318,7 @@ export const glFish = [
                 y: 90
             },
         ],
+        rotation: [3, 4, 1, 1, 1, 3, 4, 1, 3, 1, 2, 2, 4, 3, 2, 3, 4, 4, 2, 3, 1, 1, 3, 2, 3, 2],
         positionNote: "The spot changes everyday. Check Discord to know the current spot."
     },
 ]

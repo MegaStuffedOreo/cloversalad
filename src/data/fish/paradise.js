@@ -412,7 +412,7 @@ export const paradiseFish = [
         attributes: [
             { shadow: [2,3] },
             { rods: [1,2,3,5] },
-            { moment: [0] },
+            { moment: [0,1] },
             { speed: [0] }
         ],
         seasons: [
@@ -450,8 +450,8 @@ export const paradiseFish = [
                 y: 10
             },
             {
-                x: 40,
-                y: 75
+                x: 62,
+                y: 39
             }
         ],
         positionNote: ""
@@ -683,6 +683,7 @@ export const paradiseFish = [
         ],
         shadow: [],
         rods: [2, 3, 5],
+        rotation: [2, 1, 1, 3, 3, 1, 3, 2, 2, 1, 1, 3, 3, 1, 1, 3, 2, 3, 2, 2, 1, 2, 3, 1, 2, 3],
         positionNote: "The spot changes everyday. Check Discord to know the current spot."
     }
 ]

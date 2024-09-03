@@ -207,6 +207,10 @@ export const australiaFish = [
             {
                 x:40,
                 y:90
+            },
+            {
+                x:67,
+                y:90
             }
 
         ],
@@ -1331,6 +1335,10 @@ export const australiaFish = [
             {
                 x:10,
                 y:90
+            },
+            {
+                x:67,
+                y:90
             }
         ],
         positionNote: ""
@@ -1522,6 +1530,10 @@ export const australiaFish = [
             {
                 x: 30,
                 y: 55
+            },
+            {
+                x: 48,
+                y: 76
             }
         ],
         positionNote: ""
@@ -1566,6 +1578,10 @@ export const australiaFish = [
             {
                 x:90,
                 y:65
+            },
+            {
+                x:11,
+                y:89
             }
         ],
         positionNote: ""
@@ -1614,7 +1630,7 @@ export const australiaFish = [
                 y:61
             },
             {
-                spot: "Spot\u00A01\u000ANorth",
+                spot: "Spot\u00A02\u000ANorth",
                 position: "top",
                 x:44,
                 y:66
@@ -1632,6 +1648,7 @@ export const australiaFish = [
                 y:62
             }
         ],
+        rotation: [1, 4, 1, 3, 1, 3, 4, 1, 2, 1, 1, 4, 2, 2, 1, 2, 1, 4, 1, 4, 3, 1, 3, 2, 2, 1],
         positionNote: ""
     }
 ]
