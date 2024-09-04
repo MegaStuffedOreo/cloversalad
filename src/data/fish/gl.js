@@ -1318,7 +1318,7 @@ export const glFish = [
                 y: 90
             },
         ],
-        rotation: [3, 4, 1, 1, 1, 3, 4, 1, 3, 1, 2, 2, 4, 3, 2, 3, 4, 4, 2, 3, 1, 1, 3, 2, 3, 2],
+        rotation: [1,4,3,3,2,4,1,4,2,4,1,2,1,3,3,2,2,3,3,1,3,3,4,3,1,3],
         positionNote: "The spot changes everyday. Check Discord to know the current spot."
     },
 ]

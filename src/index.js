@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let revealed = false;
 
-            const currentSpot = getSpotForDate(currentFish.rotation, '2023-10-01');
+            const currentSpot = getSpotForDate(currentFish.rotation, '2024-05-01');
             const spotElements = [...document.querySelectorAll(".ccross")];
             spotElements.forEach((spot, index) => {
                 if(index !== currentSpot-1) {
