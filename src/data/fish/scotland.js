@@ -1351,28 +1351,28 @@ export const scotlandFish = [
         map: "scotland",
         positions: [
             {
-                spot: "Spot\u00A02\u000A(Cave\u00A0B)",
-                position: "bottom",
-                x: 55,
-                y: 12
-            },
-            {
                 spot: "Spot\u00A01\u000A(Cave\u00A0A)",
                 position: "right",
                 x: 62,
                 y: 20
             },
             {
-                spot: "Spot\u00A04\u000A(Mannanan\u00A0B)",
-                position: "right",
-                x: 26,
-                y: 20
+                spot: "Spot\u00A02\u000A(Cave\u00A0B)",
+                position: "bottom",
+                x: 55,
+                y: 12
             },
             {
                 spot: "Spot\u00A03\u000A(Mannanan\u00A0A)",
                 position: "top",
                 x: 34,
                 y: 16
+            },
+            {
+                spot: "Spot\u00A04\u000A(Mannanan\u00A0B)",
+                position: "right",
+                x: 26,
+                y: 20
             },
             {
                 spot: "Spot\u00A05\u000A(Cliff)",
