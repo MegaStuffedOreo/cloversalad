@@ -357,6 +357,10 @@ export const crFish = [
             {
                 x: 55,
                 y: 35
+            },
+            {
+                x: 87,
+                y: 84
             }
         ],
         positionNote: ""
