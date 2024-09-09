@@ -1597,7 +1597,7 @@ export const australiaFish = [
         attributes: [
             { shadow: [] },
             { rods: [2,3,5] },
-            { moment: [0,1] }
+            { moment: [0] }
         ],
         seasons: [
             true,
