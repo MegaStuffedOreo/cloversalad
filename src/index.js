@@ -37,6 +37,14 @@ function trackDataIdClicks(dataIdValue) {
       });
 }
 
+function trackMonsterReveal(dataIdValue) {
+    gtag('event', 'monster', {
+        'event_category': 'bouton',
+        'event_action': 'clic',
+        'event_label': dataIdValue
+      });
+}
+
 
 function getQueryParamValue(key) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -435,6 +443,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             revealed = true;
                             [...document.querySelectorAll(".not_currentspot")].forEach(notSpot => {
                                 notSpot.style.opacity = 0.3;
+                                trackMonsterReveal(currentFish.name.en);
+                                
                             })
                             mouseMovements = [];
                         }
@@ -453,6 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             revealed = true;
                             [...document.querySelectorAll(".not_currentspot")].forEach(notSpot => {
                                 notSpot.style.opacity = 0.3;
+                                trackMonsterReveal(currentFish.name.en);
                             })
                             lastShakeTime = now;
                         }
