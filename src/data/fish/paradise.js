@@ -239,8 +239,8 @@ export const paradiseFish = [
                 y: 26
             },
             {
-                x: 43,
-                y: 72
+                x: 62,
+                y: 86
             }
         ],
         positionNote: ""
@@ -497,6 +497,10 @@ export const paradiseFish = [
         night: true,
         map: "paradise",
         positions: [
+            {
+                x: 50,
+                y: 32
+            },
             {
                 x: 90,
                 y: 85

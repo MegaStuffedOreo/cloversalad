@@ -1428,6 +1428,10 @@ export const australiaFish = [
         map: "australia",
         positions: [
             {
+                x:19,
+                y:40
+            },
+            {
                 x:90,
                 y:40
             },
@@ -1584,6 +1588,7 @@ export const australiaFish = [
                 y:89
             }
         ],
+        difficulty: 2,
         positionNote: ""
     },
     {
@@ -1648,6 +1653,7 @@ export const australiaFish = [
                 y:62
             }
         ],
+        difficulty: 2,
         rotation: [3,4,1,1,2,4,3,4,2,4,3,2,3,1,1,2,2,1,1,3,1,1,4,1,3,1],
         positionNote: ""
     }
