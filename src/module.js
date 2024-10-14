@@ -3,7 +3,7 @@
 export function createList(fish, language) {
     if (!document.querySelector(`#list-${fish.map}`)) {
 
-
+    
         const listContainer = document.createElement("div");
         listContainer.setAttribute("class", "list-container hidden-list");
         listContainer.setAttribute("id", `list-${fish.map}`);

@@ -98,6 +98,9 @@ h4{
         background-color:var(--red);
     }
 }
+#fish-image, .item figure img.is-rounded{
+    background-color:#69dced;
+}
 .common{
     #fishType{
         background-color: var(--darkText);
@@ -1128,6 +1131,7 @@ a{
     transform:translateX(-50%) translateY(-50%);
     z-index:1;
     background-size: 100%;
+    background-color:#69dced;
     border: 2px solid var(--red);
     border-radius: 50%;
     &:before{

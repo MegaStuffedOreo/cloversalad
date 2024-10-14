@@ -356,7 +356,6 @@ document.addEventListener('DOMContentLoaded', () => {
             position.setAttribute("style", `background-image:url("./images/${id}.png");top:${fish.positions[i].x}%;left:${fish.positions[i].y}%`)
 
             if(fish.type === "monster"){
-                console.log("CROS MNSTER");
                 position.setAttribute("data-spot-day", fish.positions[i].spot)
                 position.setAttribute("data-spot-position", fish.positions[i].position)
                 
