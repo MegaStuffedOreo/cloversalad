@@ -199,6 +199,49 @@ h4{
         }
     }
 }
+.circular-minigame{
+    width: 30px;
+    height: 30px;
+    border:1px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    padding:2px;
+    box-sizing:border-box;
+    & > span{
+        border:1px solid var(--yellow);
+        border-radius: 50%;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%);
+        width:30%;
+        height:30%;
+        background-color:var(--yellow);
+    }
+    & > div{
+        border-top:2px solid var(--yellow);
+        border-left:2px solid var(--yellow);
+        border-right:2px solid transparent;
+        border-bottom:2px solid transparent;
+        animation-name: circularmg;
+        animation-duration:1.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        border-radius:50%;
+        width:100%;
+        height:100%;
+        transform-origin:center center;
+    }
+
+}
+@keyframes circularmg{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
 @keyframes mg {
     0%{
         width:80%;

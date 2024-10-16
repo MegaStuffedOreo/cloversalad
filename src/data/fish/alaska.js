@@ -1238,10 +1238,6 @@ export const alaskaFish = [
             {
                 x: 65,
                 y: 40
-            },
-            {
-                x: 30,
-                y: 34
             }
         ],
         positionNote: ""
