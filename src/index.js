@@ -137,14 +137,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentId = getQueryParamValue("id") ? getQueryParamValue("id") : "01";
     let currentFish = _.find(fishes, { id: currentId });
     let currentMinPoints = (currentFish.type == "common" ? 300 : currentFish.type == "rare" ? 400 : currentFish.type == "epic" ? 500 : 5000)
-    let unit = "kgs";
+    let unit = document.querySelector(".weight-toggle-container input").checked ? "kgs" : "lbs";
+    
+    // kgs is default, only update on load if browser cached lbs
+    if (unit === "lbs")
+        updateUnits();
+    
     document.querySelector(".weight-toggle-container input").addEventListener("change", (e) => {
         unit = e.target.checked ? "kgs" : "lbs";
-        Array.from(document.querySelectorAll("[data-unit")).forEach(element => {
-            element.setAttribute("data-unit", unit);
-        })
+        updateUnits();
         loadFish(currentId, window.lang);
-    })
+    });
+
+    function updateUnits(){
+        Array.from(document.querySelectorAll("[data-unit")).forEach(element => {
+            if (element.getAttribute("data-unit") !== unit)
+                element.setAttribute("data-unit", unit);
+        });
+    }
 
     // Functions to open and close a modal
     function openModal($el) {
